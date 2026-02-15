@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
+import 'package:music_app/core/radius_value_manager.dart';
+import 'package:music_app/core/string_vlue.dart';
+import 'package:music_app/core/width_values_manager.dart';
+import 'package:music_app/features/on_boarding/widgets/custom_button_onboarding_page.dart';
 import 'package:music_app/features/on_boarding/widgets/custom_title_on_boarding_page.dart';
 
 import '../../../core/alignment_manager.dart';
@@ -38,12 +42,14 @@ class OnBoardingScreen extends StatelessWidget {
                 SizedBox(
                   height: HightValueManager.h11,
                 ),
-                CustomSubtitleOnboardingPage()
+                CustomSubtitleOnboardingPage(),
+                SizedBox(
+                  height: HightValueManager.h58,
+                ),
+                CustomButtonOnboardingPage(),
               ],
             )),
       ),
     );
   }
 }
-
- 
