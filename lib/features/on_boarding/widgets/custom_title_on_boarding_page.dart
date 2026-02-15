@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/core/color_manager.dart';
+import 'package:music_app/core/font_manager.dart';
+import 'package:music_app/core/hight_value_manager.dart';
+import 'package:music_app/core/string_vlue.dart';
 
 class CustomTitleOnboardingPage extends StatelessWidget {
   const CustomTitleOnboardingPage({super.key});
@@ -8,21 +12,21 @@ class CustomTitleOnboardingPage extends StatelessWidget {
     return Column(
       children: [
          Text(
-                  "Find Your Favourite",
+                 StringValue.titleOnBoardingPage,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      height: 1.1,
-                      color: Colors.white,
-                      fontSize: 50,
+                      height: HightValueManager.h1_1,
+                      color: ColorManager.kWhiteColor,
+                      fontSize: FontSizeManager.f50,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  "Music",
+StringValue.music,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      height: 1.1,
-                      color: Color(0xff80CFF2),
-                      fontSize: 50,
+                      height: HightValueManager.h1_1,
+                      color: ColorManager.kLightBlueColor ,
+                      fontSize: FontSizeManager.f50,
                       fontWeight: FontWeight.w700),
                 ),
       ],
