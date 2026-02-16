@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/controller/on_boarding_controller.dart';
 import 'package:music_app/core/assets_manager.dart';
 import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/radius_value_manager.dart';
+import 'package:music_app/core/routes_manager.dart';
 import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/core/width_values_manager.dart';
 import 'package:music_app/features/on_boarding/widgets/custom_button_onboarding_page.dart';
@@ -50,7 +52,9 @@ class OnBoardingScreen extends StatelessWidget {
                 ),
                 CustomButtonOnboardingPage(
                   text: StringValue.getStarted,
-                  onPressed: () {},
+                  onPressed: () {
+                    OnBoardingController .navigateToHomePage(context);
+                  },
                 ),
                 CustomImageOnBoardingPage(),
               ],
