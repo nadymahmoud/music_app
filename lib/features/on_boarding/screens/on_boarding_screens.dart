@@ -6,6 +6,7 @@ import 'package:music_app/core/radius_value_manager.dart';
 import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/core/width_values_manager.dart';
 import 'package:music_app/features/on_boarding/widgets/custom_button_onboarding_page.dart';
+import 'package:music_app/features/on_boarding/widgets/custom_image_onboarding_page.dart';
 import 'package:music_app/features/on_boarding/widgets/custom_title_on_boarding_page.dart';
 
 import '../../../core/alignment_manager.dart';
@@ -41,25 +42,17 @@ class OnBoardingScreen extends StatelessWidget {
                 ),
                 CustomTitleOnboardingPage(),
                 SizedBox(
-                  height: HightValueManager.h11,
+                  height: HightValueManager.h20,
                 ),
                 CustomSubtitleOnboardingPage(),
                 SizedBox(
-                  height: HightValueManager.h58,
+                  height: HightValueManager.h11,
                 ),
                 CustomButtonOnboardingPage(
                   text: StringValue.getStarted,
                   onPressed: () {},
                 ),
-                Expanded(
-                  child: Container(
-                    width: double.infinity,
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: AssetImage(AssetsManager.onBoardingImage),
-                    ),
-                  ),
-                )
+                CustomImageOnBoardingPage(),
               ],
             )),
       ),

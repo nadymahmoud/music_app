@@ -15,7 +15,8 @@ class CustomSubtitleOnboardingPage extends StatelessWidget {
       child: Text(
         StringValue.subtitleOnBoardingPage,
         textAlign: TextAlign.center,
-        style: TextStyle(color: ColorManager.kWhiteColor),
+        style: TextStyle(
+            color: ColorManager.kWhiteColor, fontWeight: FontWeight.w500),
       ),
     );
   }
