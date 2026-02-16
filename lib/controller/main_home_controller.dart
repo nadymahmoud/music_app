@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/features/main_home/screens/home_page.dart';
 
 class HomeController {
-  static List<Icon> homeIcons = [
+  static List<Icon> mainhomeIcons = [
     Icon(Icons.align_horizontal_left),
     Icon(Icons.home),
     Icon(Icons.heart_broken),
@@ -14,11 +15,7 @@ class HomeController {
         child: Text("align_horizontal_left"),
       ),
     ),
-    Scaffold(
-      body: Center(
-        child: Text("Home"),
-      ),
-    ),
+     HomePage(),
     Scaffold(
       body: Center(
         child: Text("Heart"),
