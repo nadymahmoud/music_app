@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/controller/home_controller.dart';
+import 'package:music_app/features/home/widgets/custom_bottom_nav_bar_home_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,20 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.red,
-          items: [
-            BottomNavigationBarItem(
-                label: "",
-                icon: Image(
-                    image: AssetImage(
-                        "assets/images/button_nav_bar/left_alignment.png"))),
-            BottomNavigationBarItem(label: "", icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: "", icon: Icon(Icons.heart_broken)),
-            BottomNavigationBarItem(label: "", icon: Icon(Icons.list)),
-            BottomNavigationBarItem(label: "", icon: Icon(Icons.settings)),
-          ]),
+      bottomNavigationBar: CustomBottomNavBarHomePage(),
     );
   }
 }
