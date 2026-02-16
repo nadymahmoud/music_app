@@ -3,5 +3,6 @@ class StringValue {
   static const String music = "Music";
   static const String subtitleOnBoardingPage =
       "Find Your Latest Favourite Music From Our Collection ";
-  static const String getStarted =  "Get Started";
+  static const String getStarted = "Get Started";
+  static const String searchSong = "Search Song";
 }
