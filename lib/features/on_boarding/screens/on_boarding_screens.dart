@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/core/assets_manager.dart';
 import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/radius_value_manager.dart';
@@ -46,7 +47,19 @@ class OnBoardingScreen extends StatelessWidget {
                 SizedBox(
                   height: HightValueManager.h58,
                 ),
-                CustomButtonOnboardingPage(),
+                CustomButtonOnboardingPage(
+                  text: StringValue.getStarted,
+                  onPressed: () {},
+                ),
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    child: Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage(AssetsManager.onBoardingImage),
+                    ),
+                  ),
+                )
               ],
             )),
       ),
