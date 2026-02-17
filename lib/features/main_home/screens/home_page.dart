@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/color_manager.dart';
+import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/features/main_home/widgets/custom_text_field_home_page.dart';
+import 'package:music_app/features/main_home/widgets/custom_title_home_page.dart';
 
 import '../../../core/alignment_manager.dart';
 
@@ -18,11 +20,10 @@ class HomePage extends StatelessWidget {
           end: Alignment(AlignmentManagerX.x_0_20, AlignmentManagerY.x0_98),
         )),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 51, right: 31, left: 31),
-              child: CustomTextFieldHomePage(),
-            ),
+            CustomTextFieldHomePage(),
+            CustomTitleHomePage(),
           ],
         ),
       ),
