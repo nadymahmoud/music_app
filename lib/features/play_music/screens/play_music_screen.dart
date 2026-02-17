@@ -35,6 +35,9 @@ class PlayMusicScreen extends StatelessWidget {
                   height: 124,
                 ),
                 CustomSongsDetailsPlayMusic(),
+                Row(
+                  children: [Image(image: AssetImage(AssetsManager.loop))],
+                )
               ],
             ),
           ),
