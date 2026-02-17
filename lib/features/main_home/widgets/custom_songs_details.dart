@@ -1,51 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/assets_manager.dart';
+import 'package:music_app/core/hight_value_manager.dart';
+import 'package:music_app/core/padding_value.dart';
+import 'package:music_app/core/radius_value_manager.dart';
+import 'package:music_app/core/width_values_manager.dart';
 
 import '../../../core/color_manager.dart';
 import '../../../core/font_manager.dart';
 
 class CustomSongsDetails extends StatelessWidget {
-  const CustomSongsDetails({super.key});
-
+  const CustomSongsDetails(
+      {super.key,
+      required this.musicName,
+      required this.singer,
+      required this.itemCount});
+  final String musicName;
+  final String singer;
+  final int itemCount;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image(
-                    fit: BoxFit.cover,
-                    width: 151,
-                    height: 151,
-                    image: AssetImage(AssetsManager.testImage),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: PaddingValue.p20),
+        child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(RadiusValueManager.r10),
+                    child: Image(
+                      fit: BoxFit.cover,
+                      width: WidthValueManager.w150,
+                      height: HightValueManager.h150,
+                      image: AssetImage(AssetsManager.testImage),
+                    ),
                   ),
+                  SizedBox(
+                    height: HightValueManager.h9,
+                  ),
+                  Text(
+                    musicName,
+                    style: TextStyle(
+                        fontSize: FontSizeManager.f15,
+                        fontWeight: FontWeight.w500,
+                        color: ColorManager.kWhiteColor),
+                  ),
+                  SizedBox(
+                    height: HightValueManager.h4,
+                  ),
+                  Text(
+                    singer,
+                    style: TextStyle(
+                        fontSize: FontSizeManager.f12,
+                        fontWeight: FontWeight.w500,
+                        color: ColorManager.kLightWhiteColor),
+                  ),
+                ],
+              );
+            },
+            separatorBuilder: (context, index) => SizedBox(
+                  width: WidthValueManager.w17,
                 ),
-                Text(
-                  "Music Name",
-                  style: TextStyle(
-                      fontSize: FontSizeManager.f15,
-                      fontWeight: FontWeight.w500,
-                      color: ColorManager.kWhiteColor),
-                ),
-                Text(
-                  "Singers",
-                  style: TextStyle(
-                      fontSize: FontSizeManager.f12,
-                      fontWeight: FontWeight.w500,
-                      color: ColorManager.kLightWhiteColor),
-                ),
-              ],
-            );
-          },
-          separatorBuilder: (context, index) => SizedBox(
-                width: 17,
-              ),
-          itemCount: 3),
+            itemCount: itemCount),
+      ),
     );
   }
 }

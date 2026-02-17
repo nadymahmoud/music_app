@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/core/assets_manager.dart';
 import 'package:music_app/core/color_manager.dart';
 import 'package:music_app/core/font_manager.dart';
+import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/features/main_home/widgets/custom_songs_details.dart';
 import 'package:music_app/features/main_home/widgets/custom_text_field_home_page.dart';
@@ -27,7 +28,14 @@ class HomePage extends StatelessWidget {
           children: [
             CustomTextFieldHomePage(),
             CustomTitleHomePage(),
-            CustomSongsDetails(),
+            SizedBox(
+              height: HightValueManager.h22,
+            ),
+            CustomSongsDetails(
+              musicName: "Music Name",
+              singer: "Singer",
+              itemCount: 3,
+            ),
           ],
         ),
       ),

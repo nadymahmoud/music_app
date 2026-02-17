@@ -7,4 +7,8 @@ class HightValueManager {
   static const double h58 = 58;
   static const double h199 = 199;
   static const double h20 = 20;
+  static const double h9 = 9;
+  static const double h4 = 4;
+  static const double h22 = 22;
+  static const double h150 = 150;
 }
