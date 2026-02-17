@@ -4,18 +4,14 @@ import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/padding_value.dart';
 import 'package:music_app/core/radius_value_manager.dart';
 import 'package:music_app/core/width_values_manager.dart';
+import 'package:music_app/model/songs_model.dart';
 
 import '../../../core/color_manager.dart';
 import '../../../core/font_manager.dart';
 
 class CustomSongsDetails extends StatelessWidget {
-  const CustomSongsDetails(
-      {super.key,
-      required this.musicName,
-      required this.singer,
-      required this.itemCount});
-  final String musicName;
-  final String singer;
+  const CustomSongsDetails({super.key, required this.itemCount, required this.songsModel});
+  final SongsModel songsModel;
   final int itemCount;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +38,7 @@ class CustomSongsDetails extends StatelessWidget {
                     height: HightValueManager.h9,
                   ),
                   Text(
-                    musicName,
+                    songsModel.song,
                     style: TextStyle(
                         fontSize: FontSizeManager.f15,
                         fontWeight: FontWeight.w500,
@@ -52,7 +48,7 @@ class CustomSongsDetails extends StatelessWidget {
                     height: HightValueManager.h4,
                   ),
                   Text(
-                    singer,
+                    songsModel.singer,
                     style: TextStyle(
                         fontSize: FontSizeManager.f12,
                         fontWeight: FontWeight.w500,

@@ -9,6 +9,7 @@ import 'package:music_app/features/main_home/widgets/custom_row_recommanded_musi
 import 'package:music_app/features/main_home/widgets/custom_songs_details.dart';
 import 'package:music_app/features/main_home/widgets/custom_text_field_home_page.dart';
 import 'package:music_app/features/main_home/widgets/custom_title_home_page.dart';
+import 'package:music_app/model/songs_model.dart';
 
 import '../../../core/alignment_manager.dart';
 
@@ -25,32 +26,45 @@ class HomePage extends StatelessWidget {
           begin: Alignment(AlignmentManagerX.x0_20, AlignmentManagerY.x_0_98),
           end: Alignment(AlignmentManagerX.x_0_20, AlignmentManagerY.x0_98),
         )),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          CustomTextFieldHomePage(),
-          CustomTitleHomePage(
-            title: StringValue.searchSong,
-          ),
-          SizedBox(
-            height: HightValueManager.h22,
-          ),
-          CustomSongsDetails(
-            musicName: "Music Name",
-            singer: "Singer",
-            itemCount: 3,
-          ),
-          CustomTitleHomePage(
-            title: "Recommanded Music",
-          ),
-          SizedBox(
-            height: HightValueManager.h22,
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) => CustomRowRecommandedMusic(),
-              itemCount: 10,
+        child: SingleChildScrollView(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            CustomTextFieldHomePage(),
+            CustomTitleHomePage(
+              title: StringValue.searchSong,
             ),
-          ),
-        ]),
+            SizedBox(
+              height: HightValueManager.h22,
+            ),
+            CustomSongsDetails(
+              songsModel: SongsModel(
+                image: "Music Name",
+                song: "Music Name",
+                singer: "Singer",
+                pathName: "Music Name",
+              ),
+              itemCount: 3,
+            ),
+            CustomTitleHomePage(
+              title: "Recommanded Music",
+            ),
+            SizedBox(
+              height: HightValueManager.h22,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10,
+                ),
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => CustomRowRecommandedMusic(),
+                itemCount: 10,
+              ),
+            ),
+          ]),
+        ),
       ),
     );
   }
