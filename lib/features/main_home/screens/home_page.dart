@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:music_app/controller/home_page_controller.dart';
 import 'package:music_app/core/assets_manager.dart';
 import 'package:music_app/core/color_manager.dart';
 import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
+import 'package:music_app/core/routes_manager.dart';
 import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/features/main_home/widgets/custom_row_recommanded_music.dart';
 import 'package:music_app/features/main_home/widgets/custom_search_details.dart';
@@ -37,6 +39,9 @@ class HomePage extends StatelessWidget {
               height: HightValueManager.h22,
             ),
             CustomSearchDetails(
+              onTap: () {
+                HomePageController.navigatorToPlayMusic(context);
+              },
               songsModel: SongsModel(
                 image: "Music Name",
                 song: "Music Name",

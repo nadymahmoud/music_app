@@ -11,9 +11,10 @@ import '../../../core/font_manager.dart';
 
 class CustomSearchDetails extends StatelessWidget {
   const CustomSearchDetails(
-      {super.key, required this.itemCount, required this.songsModel});
+      {super.key, required this.itemCount, required this.songsModel, required this.onTap});
   final SongsModel songsModel;
   final int itemCount;
+   final GestureTapCallback  onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,9 +25,7 @@ class CustomSearchDetails extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {
-                  print("OnTap");
-                },
+                onTap:onTap ,
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/features/main_home/screens/Main_home_screen.dart';
 import 'package:music_app/features/on_boarding/screens/on_boarding_screens.dart';
+import 'package:music_app/features/play_music/screens/play_music_screen.dart';
 import 'package:music_app/features/splash/screens/splash_screens.dart';
 
 class RoutesManager {
@@ -8,6 +9,7 @@ class RoutesManager {
     RoutesName.splashRoutes: (context) => const SplashScreens(),
     RoutesName.onBordingRoutes: (context) => const OnBoardingScreen(),
     RoutesName.homeRoutes: (context) => const HomeMainScreen(),
+    RoutesName.playMusicRoutes:(context) => const PlayMusicScreen(),
   };
 }
 
@@ -15,4 +17,6 @@ class RoutesName {
   static const String splashRoutes = "/splash_page";
   static const String onBordingRoutes = "/onBording_page";
   static const String homeRoutes = "/home_page";
+    static const String playMusicRoutes = "/play_music_page";
+
 }

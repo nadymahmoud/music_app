@@ -5,4 +5,6 @@ class StringValue {
       "Find Your Latest Favourite Music From Our Collection ";
   static const String getStarted = "Get Started";
   static const String searchSong = "Search Song";
+    static const String nowPlaying = "Now Playing";
+
 }
