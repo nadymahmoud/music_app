@@ -27,7 +27,9 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextFieldHomePage(),
-            CustomTitleHomePage(),
+            CustomTitleHomePage(
+              title: StringValue.searchSong,
+            ),
             SizedBox(
               height: HightValueManager.h22,
             ),
@@ -35,6 +37,9 @@ class HomePage extends StatelessWidget {
               musicName: "Music Name",
               singer: "Singer",
               itemCount: 3,
+            ),
+            CustomTitleHomePage(
+              title: "Recommanded Music",
             ),
           ],
         ),

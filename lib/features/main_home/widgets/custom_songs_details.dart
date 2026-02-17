@@ -19,7 +19,8 @@ class CustomSongsDetails extends StatelessWidget {
   final int itemCount;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      height: 210,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: PaddingValue.p20),
         child: ListView.separated(
