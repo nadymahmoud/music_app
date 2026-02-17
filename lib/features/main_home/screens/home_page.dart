@@ -6,7 +6,7 @@ import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/string_vlue.dart';
 import 'package:music_app/features/main_home/widgets/custom_row_recommanded_music.dart';
-import 'package:music_app/features/main_home/widgets/custom_songs_details.dart';
+import 'package:music_app/features/main_home/widgets/custom_search_details.dart';
 import 'package:music_app/features/main_home/widgets/custom_text_field_home_page.dart';
 import 'package:music_app/features/main_home/widgets/custom_title_home_page.dart';
 import 'package:music_app/model/songs_model.dart';
@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: HightValueManager.h22,
             ),
-            CustomSongsDetails(
+            CustomSearchDetails(
               songsModel: SongsModel(
                 image: "Music Name",
                 song: "Music Name",
