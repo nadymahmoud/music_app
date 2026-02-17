@@ -25,30 +25,32 @@ class HomePage extends StatelessWidget {
           begin: Alignment(AlignmentManagerX.x0_20, AlignmentManagerY.x_0_98),
           end: Alignment(AlignmentManagerX.x_0_20, AlignmentManagerY.x0_98),
         )),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomTextFieldHomePage(),
-            CustomTitleHomePage(
-              title: StringValue.searchSong,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          CustomTextFieldHomePage(),
+          CustomTitleHomePage(
+            title: StringValue.searchSong,
+          ),
+          SizedBox(
+            height: HightValueManager.h22,
+          ),
+          CustomSongsDetails(
+            musicName: "Music Name",
+            singer: "Singer",
+            itemCount: 3,
+          ),
+          CustomTitleHomePage(
+            title: "Recommanded Music",
+          ),
+          SizedBox(
+            height: HightValueManager.h22,
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) => CustomRowRecommandedMusic(),
+              itemCount: 10,
             ),
-            SizedBox(
-              height: HightValueManager.h22,
-            ),
-            CustomSongsDetails(
-              musicName: "Music Name",
-              singer: "Singer",
-              itemCount: 3,
-            ),
-            CustomTitleHomePage(
-              title: "Recommanded Music",
-            ),
-            SizedBox(
-              height: HightValueManager.h22,
-            ),
-            CustomRowRecommandedMusic(),
-          ],
-        ),
+          ),
+        ]),
       ),
     );
   }
