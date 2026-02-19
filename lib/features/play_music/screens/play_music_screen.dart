@@ -4,6 +4,7 @@ import 'package:music_app/core/assets_manager.dart';
 import 'package:music_app/core/font_manager.dart';
 import 'package:music_app/core/hight_value_manager.dart';
 import 'package:music_app/core/padding_value.dart';
+import 'package:music_app/features/play_music/widgets/custom_button_controller_play_music_screen.dart';
 import 'package:music_app/features/play_music/widgets/custom_songs_details_play_music.dart';
 
 import '../../../core/alignment_manager.dart';
@@ -35,9 +36,10 @@ class PlayMusicScreen extends StatelessWidget {
                   height: 124,
                 ),
                 CustomSongsDetailsPlayMusic(),
-                Row(
-                  children: [Image(image: AssetImage(AssetsManager.loop))],
-                )
+                SizedBox(
+                  height: 28,
+                ),
+                CustomButtonControllerPlayMusicScreen(),
               ],
             ),
           ),
